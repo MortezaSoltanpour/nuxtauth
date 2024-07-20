@@ -2,6 +2,14 @@
   <div class="container">
     <div class="row justify-content-center mt-5">
       <div class="col-md-4">
+        <div v-if="errors.length > 0" class="alert alert-danger" role="alert">
+          <ul>
+            <li v-for="(error, index) in errors" :key="index">
+              {{ error }}
+            </li>
+          </ul>
+        </div>
+
         <form @submit.prevent="register">
           <div class="mb-3">
             <label htmlFor="name" class="form-label">Name</label>
@@ -51,6 +59,7 @@
 <script setup>
 import { reactive } from "vue";
 
+const errors = ref([]);
 const fromData = reactive({
   name: "",
   email: "",
@@ -66,7 +75,7 @@ async function register() {
     });
     console.log(user);
   } catch (error) {
-    console.log(error.data.data);
+    errors.value = Object.values(error.data.data).flat();
   }
 }
 </script>
