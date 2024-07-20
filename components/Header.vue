@@ -16,7 +16,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <NuxtLink class="nav-link active" to="/">Home</NuxtLink>
+            <NuxtLink activeClass="active" class="nav-link" to="/"
+              >Home</NuxtLink
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Posts</a>
@@ -30,7 +32,9 @@
             <a class="nav-link" href="#">Logout</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
+            <NuxtLink activeClass="active" class="nav-link" to="/auth/register"
+              >Register</NuxtLink
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Login</a>
